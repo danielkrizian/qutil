@@ -14,7 +14,7 @@
   pkgInfo: .utl.requireVH.getPackageInfo[x;v;allowReload];
   .utl.LOADSTRUCTURE:oldStructure;
   / The convention used for packages will be to start by using an init file
-  file: $[not 11h ~ type key pkgInfo[`file];pkgInfo[`file];` sv pkgInfo[`file],`init.q];
+  file: $[1=count key pkgInfo[`file];pkgInfo[`file];` sv pkgInfo[`file],`init.q];
   if[not count key file; '"File '",(1 _ string file),"' not found"];
   oldFileLoading: .utl.FILELOADING;
   oldPkgLoading: .utl.PKGLOADING;
